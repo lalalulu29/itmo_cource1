@@ -9,6 +9,7 @@ public class SquareEquation {
      будет находить и выводить на экран вещественные корни квадратного уравнения ax²+bx+c=0,
      либо сообщать, что корней нет.
      */
+
     public static void main(String[] args) {
         double a = 2;
         double b = -9;
