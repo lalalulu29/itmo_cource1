@@ -12,9 +12,9 @@ public class EvenArray {
         for(int even: evenArray) {
             System.out.print(even + " ");
         }
-        System.out.println("");
+        System.out.println();
         for(int even: evenArray) {
-            System.out.print(even + "\n");
+            System.out.println(even);
         }
         // TODO implement
     }
