@@ -23,15 +23,15 @@ public class EvenArray {
         // TODO implement
         int maxSize = 20;
         int count = 0;
-        int[] rezult = new int[maxSize / 2];
+        int[] result = new int[maxSize / 2];
         for (int i = 2; i <= maxSize; i++) {
             if ((i & 1) == 0) {
 
-                rezult[count] = i;
+                result[count] = i;
                 count +=1;
             }
         }
 
-        return rezult;
+        return result;
     }
 }
