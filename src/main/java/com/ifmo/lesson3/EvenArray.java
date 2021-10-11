@@ -9,29 +9,27 @@ public class EvenArray {
      */
     public static void main(String[] args) {
         int[] evenArray = evenArray();
-        for(int even: evenArray) {
-            System.out.print(even + " ");
+
+        // TODO implement
+        int count = 0;
+        for (int i = 2; i <= 20; i++) {
+            if ((i & 1) == 0) {
+                evenArray[count] = i;
+                count += 1;
+            }
+        }
+        for(int value: evenArray) {
+            System.out.print(value + " ");
         }
         System.out.println();
-        for(int even: evenArray) {
-            System.out.println(even);
+        for(int value: evenArray) {
+            System.out.print(value + "\n");
         }
-        // TODO implement
     }
 
     public static int[] evenArray() {
         // TODO implement
-        int maxSize = 20;
-        int count = 0;
-        int[] result = new int[maxSize / 2];
-        for (int i = 2; i <= maxSize; i++) {
-            if ((i & 1) == 0) {
 
-                result[count] = i;
-                count +=1;
-            }
-        }
-
-        return result;
+        return new int[10];
     }
 }
