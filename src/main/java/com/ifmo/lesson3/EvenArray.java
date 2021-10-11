@@ -29,7 +29,12 @@ public class EvenArray {
 
     public static int[] evenArray() {
         // TODO implement
-
-        return new int[10];
+        int count = 0;
+        for (int i = 2; i <= 20; i++) {
+            if ((i & 1) == 0) {
+                count += 1;
+            }
+        }
+        return new int[count];
     }
 }
