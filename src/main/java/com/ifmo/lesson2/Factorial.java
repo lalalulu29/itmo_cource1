@@ -17,7 +17,8 @@ public class Factorial {
     }
 
     public static long factorial(int n) {
-        int factorial = 1;
+        long factorial = 1;
+
         for(; n > 0;n-=1) {
             factorial *= n;
         }
