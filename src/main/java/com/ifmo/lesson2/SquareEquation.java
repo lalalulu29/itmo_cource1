@@ -10,9 +10,9 @@ public class SquareEquation {
      либо сообщать, что корней нет.
      */
     public static void main(String[] args) {
-        double a = 2;
-        double b = -9;
-        double c = 9;
+        double a = 10;
+        double b = -11;
+        double c = 3;
 
         double[] roots = squareEquationRoots(a, b, c);
 
@@ -27,9 +27,11 @@ public class SquareEquation {
         // TODO implement
 
         double desk = Math.pow(b, 2) - (4d * a * c);
+        System.out.println(desk);
         if (desk < 0) return null;
-        double x1 = (-b + Math.sqrt(desk)) / Math.pow(a, 2);
-        double x2 = (-b - Math.sqrt(desk)) / Math.pow(a, 2);
+
+        double x1 = (-b + Math.sqrt(desk)) / (a * 2);
+        double x2 = (-b - Math.sqrt(desk)) / (a * 2);
         return new double[] {x1, x2};
     }
 }
