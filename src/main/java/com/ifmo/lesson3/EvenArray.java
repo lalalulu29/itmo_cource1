@@ -1,5 +1,8 @@
 package com.ifmo.lesson3;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class EvenArray {
     /*
     Создайте массив из всех чётных чисел от 2 до 20 и выведите элементы массива на экран
@@ -18,9 +21,7 @@ public class EvenArray {
                 count += 1;
             }
         }
-        for(int value: evenArray) {
-            System.out.print(value + " ");
-        }
+        System.out.println(Arrays.toString(evenArray));
         System.out.println();
         for(int value: evenArray) {
             System.out.print(value + "\n");
