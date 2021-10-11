@@ -28,8 +28,8 @@ public class SquareEquation {
 
         double desk = Math.pow(b, 2) - (4d * a * c);
         if (desk < 0) return null;
-        double x1 = -b + Math.sqrt(desk);
-        double x2 = -b - Math.sqrt(desk);
+        double x1 = (-b + Math.sqrt(desk)) / Math.pow(a, 2);
+        double x2 = (-b - Math.sqrt(desk)) / Math.pow(a, 2);
         return new double[] {x1, x2};
     }
 }
