@@ -71,8 +71,13 @@ public class LinkedList {
         int count = 0;
         Item lastItem = null;
         while (true) {
+            if (i == 0) {
+                head = head.next;
+                return head;
+            }
             if (count == i) {
                 lastItem.next = search.next;
+                return lastItem;
             }
             if (search.next == null) {
                 return null;
