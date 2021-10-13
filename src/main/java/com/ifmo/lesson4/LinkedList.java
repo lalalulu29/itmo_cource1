@@ -77,7 +77,6 @@ public class LinkedList {
             if (search.next == null) {
                 return null;
             }
-
             lastItem = search;
             search = search.next;
 
