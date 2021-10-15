@@ -13,13 +13,7 @@ public class EvenArray {
         int[] evenArray = evenArray();
 
         // TODO implement
-        int count = 0;
-        for (int i = 2; i <= 20; i++) {
-            if ((i & 1) == 0) {
-                evenArray[count] = i;
-                count += 1;
-            }
-        }
+
         for(int value: evenArray) {
             System.out.print(value + " ");
         }
@@ -32,14 +26,16 @@ public class EvenArray {
 
     public static int[] evenArray() {
         // TODO implement
-//        int count = 0;
-//        for (int i = 2; i <= 20; i++) {
-//            if ((i & 1) == 0) {
-//                count += 1;
-//            }
-//        }
+        int count = 0;
+        int[] value = new int[10];
+        for (int i = 2; i <= 20; i++) {
+            if ((i & 1) == 0) {
+                value[count] = i;
+                count += 1;
+            }
+        }
 
 
-        return new int[10];
+        return value;
     }
 }
