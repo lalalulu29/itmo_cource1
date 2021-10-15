@@ -1,6 +1,5 @@
 package com.ifmo.lesson3;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class EvenArray {
@@ -21,7 +20,10 @@ public class EvenArray {
                 count += 1;
             }
         }
-        System.out.println(Arrays.toString(evenArray));
+        for(int value: evenArray) {
+            System.out.print(value + " ");
+        }
+//        System.out.println(Arrays.toString(evenArray));
         System.out.println();
         for(int value: evenArray) {
             System.out.print(value + "\n");
@@ -30,12 +32,14 @@ public class EvenArray {
 
     public static int[] evenArray() {
         // TODO implement
-        int count = 0;
-        for (int i = 2; i <= 20; i++) {
-            if ((i & 1) == 0) {
-                count += 1;
-            }
-        }
-        return new int[count];
+//        int count = 0;
+//        for (int i = 2; i <= 20; i++) {
+//            if ((i & 1) == 0) {
+//                count += 1;
+//            }
+//        }
+
+
+        return new int[10];
     }
 }
