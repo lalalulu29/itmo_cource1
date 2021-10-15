@@ -21,10 +21,10 @@ public class Fibonacci20 {
         int a = 1;
         int b = 1;
         int[] returnValue = new int[20];
-        int count = 0;
-//        System.out.println(a);
-//        System.out.println(b);
-        for(int i = 1; i<= 20; i++) {
+        int count = 2;
+        returnValue[0] = 1;
+        returnValue[1] = 1;
+        for(int i = 1; i<= 18; i++) {
             b = b + a;
             a = b - a;
             returnValue[count] = b;
