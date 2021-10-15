@@ -43,6 +43,9 @@ public class LinkedList {
         Item search = head;
         int count = 0;
         while (true) {
+            if (search == null) {
+                return null;
+            }
             if (count == i) {
                 return search.value;
             }
@@ -71,6 +74,10 @@ public class LinkedList {
         int count = 0;
         Item lastItem = null;
         while (true) {
+            if (search == null) {
+                return null;
+            }
+//            System.out.println(search.value);
             if (i == 0) {
                 head = head.next;
                 return head;
