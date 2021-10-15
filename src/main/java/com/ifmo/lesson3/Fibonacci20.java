@@ -12,7 +12,9 @@ public class Fibonacci20 {
      */
     public static void main(String[] args) {
         int[] fibonacciNumbers = fibonacciNumbers();
-        System.out.println(Arrays.toString(fibonacciNumbers));
+        for(int value: fibonacciNumbers) {
+            System.out.print(value + " ");
+        }
         // TODO implement
     }
 
