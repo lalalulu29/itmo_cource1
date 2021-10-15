@@ -80,11 +80,11 @@ public class LinkedList {
 //            System.out.println(search.value);
             if (i == 0) {
                 head = head.next;
-                return head;
+                return head.value;
             }
             if (count == i) {
                 lastItem.next = search.next;
-                return lastItem;
+                return lastItem.value;
             }
             if (search.next == null) {
                 return null;
