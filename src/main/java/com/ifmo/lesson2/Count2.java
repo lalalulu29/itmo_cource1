@@ -1,4 +1,4 @@
-package com.itmo.lesson2;
+package com.ifmo.lesson2;
 
 import java.util.Scanner;
 
