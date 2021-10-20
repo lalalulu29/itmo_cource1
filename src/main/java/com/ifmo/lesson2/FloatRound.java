@@ -23,7 +23,7 @@ public class FloatRound {
             }
         } else {
             if (drob >= -5) {
-                fool--;
+                return fool;
             }
         }
 
