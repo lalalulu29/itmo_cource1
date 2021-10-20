@@ -16,9 +16,16 @@ public class FloatRound {
         // TODO implement
         int fool = (int) n;
         int drob = (int) (n % fool * 10);
-        if (drob >= 5) {
-            fool++;
+        if (n > 0) {
+            if (drob >= 5) {
+                fool++;
+            }
+        } else {
+            if (drob >= 5) {
+                fool--;
+            }
         }
+
 //        System.out.println(drob);
 
         return fool;
