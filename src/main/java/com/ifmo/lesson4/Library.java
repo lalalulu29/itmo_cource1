@@ -98,6 +98,7 @@ public class Library {
                     System.arraycopy(shelves,i + 1,newShelves, i, remainingElements);
                     shelves = newShelves;
 
+
                 }
                 return count;
             }
