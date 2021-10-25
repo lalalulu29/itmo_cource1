@@ -25,9 +25,9 @@ public class IsInInterval {
     public static String isInInterval(int rnd) {
         // TODO implement
         if (rnd > 100 || rnd < 25) {
-            return "Число " + rnd + " не содержится в интервале (25,100)\u2028";
+            return "Число " + rnd + " не содержится в интервале (25,100)";
         }
-        return "Число " + rnd + " содержится в интервале (25,100)\u2028";
+        return "Число " + rnd + " содержится в интервале (25,100)";
     }
 
 }
