@@ -92,7 +92,7 @@ public class Library {
                 shelf.setQuantity(shelf.getQuantity() - count);
                 if (shelf.getQuantity() == 0) {
                     shelves[i] = null;
-                    Shelf[] newShelves = new Shelf[shelves.length - 1];
+                    Shelf[] newShelves = new Shelf[shelves.length];
                     int remainingElements = shelves.length - ( i + 1 );
                     System.arraycopy(shelves, 0, newShelves, 0, i);
                     System.arraycopy(shelves,i + 1,newShelves, i, remainingElements);
