@@ -48,10 +48,10 @@ public class WallClock {
             case 7: return "Осталось 7 часов";
             case 6: return "Осталось 6 часов";
             case 5: return "Осталось 5 часов";
-            case 4: return "Осталось 4 часов";
-            case 3: return "Осталось 3 часов";
-            case 2: return "Осталось 2 часов";
-            case 1: return "Осталось 1 часов";
+            case 4: return "Осталось 4 часа";
+            case 3: return "Осталось 3 часа";
+            case 2: return "Осталось 2 часа";
+            case 1: return "Осталось 1 час";
             default: return "Осталось менее часа";
         }
 
