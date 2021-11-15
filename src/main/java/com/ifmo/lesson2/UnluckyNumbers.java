@@ -20,13 +20,18 @@ public class UnluckyNumbers {
         int count = 0;
         for (int i = 1; i < 99999; i++) {
             String[] numbers = String.valueOf(i).split("");
-            for (int j = 0; j < numbers.length - 1; j++) {
+            flag:
+            for (int j = 0; j <= numbers.length - 1; j++) {
                 String number = numbers[j];
+//                System.out.println(numbers[j]);
                 if (Objects.equals(number, "4")) {
                     count++;
-                } else if(Objects.equals(number, "1")) {
-                    if (numbers[j + 1].equals("3")) {
+                    break flag;
+                } else if(Objects.equals(number, "3")) {
+
+                    if (j != 0 && numbers[j - 1].equals("1")) {
                         count++;
+                        break flag;
                     }
                 }
             }
