@@ -15,7 +15,7 @@ public class Bank {
         Object obj = new Object();
         Account crAcc = accMap.get(userId);
         if (crAcc == null) {
-            synchronized(obj) {
+            synchronized (obj) {
                 if (crAcc == null) {
                     crAcc = new Account(1L, 50, userId, false);
                     accMap.put(crAcc.getUserId(), crAcc);
@@ -30,15 +30,18 @@ public class Bank {
 
         Account srcContact = accMap.get(srcAccId);
         Account dstContact = accMap.get(dstAccId);
-        if(srcContact != null &&
-            dstContact != null) {
-            synchronized(srcContact) {
-                if(srcContact.getAmount() - amount >= 0 &&
-                        srcContact.getAmount() - amount >= 0) {
+        if (srcContact != null &&
+                dstContact != null) {
+            if (srcContact.getAmount() - amount >= 0 &&
+                    srcContact.getAmount() - amount >= 0) {
+                synchronized (srcContact) {
+                    if (srcContact.getAmount() - amount >= 0 &&
+                            srcContact.getAmount() - amount >= 0) {
 
-                    srcContact.setAmount(srcContact.getAmount() - amount);
-                    synchronized(dstContact) {
-                        dstContact.setAmount(dstContact.getAmount() + amount);
+                        srcContact.setAmount(srcContact.getAmount() - amount);
+                        synchronized (dstContact) {
+                            dstContact.setAmount(dstContact.getAmount() + amount);
+                        }
                     }
                 }
             }
