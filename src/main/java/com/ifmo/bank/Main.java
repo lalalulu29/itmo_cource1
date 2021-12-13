@@ -28,13 +28,19 @@ public class Main {
         Thread t3 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(1, 2, 50);
+                bank.transferMoney(1, 2, 30);
             }
         };
         Thread t4 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(2, 1, 50);
+                bank.transferMoney(2, 1, 40);
+            }
+        };
+        Thread t5 = new Thread() {
+            @Override
+            public void run() {
+                bank.transferMoney(1, 2, 25);
             }
         };
         System.out.println("Before");
@@ -44,9 +50,11 @@ public class Main {
 
         t3.start();
         t4.start();
+        t5.start();
 
         t3.join();
         t4.join();
+        t5.join();
 
         System.out.println("After");
         for (Account value : bank.getAccMap().values()) {

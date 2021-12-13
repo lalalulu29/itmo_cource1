@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class Bank {
-    private ConcurrentMap<Long, Account> accMap = new ConcurrentHashMap<>();
+    private final ConcurrentMap<Long, Account> accMap = new ConcurrentHashMap<>();
 
 
     public ConcurrentMap<Long, Account> getAccMap() {
@@ -12,9 +12,10 @@ public class Bank {
     }
 
     public Account createAccount(long userId) {
+        Object obj = new Object();
         Account crAcc = accMap.get(userId);
         if (crAcc == null) {
-            synchronized(" ") {
+            synchronized(obj) {
                 if (crAcc == null) {
                     crAcc = new Account(1L, 50, userId, false);
                     accMap.put(crAcc.getUserId(), crAcc);
@@ -30,14 +31,14 @@ public class Bank {
         Account srcContact = accMap.get(srcAccId);
         Account dstContact = accMap.get(dstAccId);
         if(srcContact != null &&
-            dstContact != null &&
-            srcContact.getAmount() - amount >= 0) {
+            dstContact != null) {
             synchronized(srcContact) {
-                if(srcContact.getAmount() - amount >= 0) {
-                    double amountAccount = srcContact.getAmount();
-                    srcContact.setAmount(amountAccount - amount);
+                if(srcContact.getAmount() - amount >= 0 &&
+                        srcContact.getAmount() - amount >= 0) {
+
+                    srcContact.setAmount(srcContact.getAmount() - amount);
                     synchronized(dstContact) {
-                        dstContact.setAmount(amountAccount + amount);
+                        dstContact.setAmount(dstContact.getAmount() + amount);
                     }
                 }
             }
