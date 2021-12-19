@@ -12,14 +12,11 @@ public class Bank {
     }
 
     public Account createAccount(long userId) {
-        Object obj = new Object();
         Account crAcc = accMap.get(userId);
         if (crAcc == null) {
-            synchronized (obj) {
-                if (crAcc == null) {
-                    crAcc = new Account(1L, 50, userId, false);
-                    accMap.put(crAcc.getUserId(), crAcc);
-                }
+            synchronized (accMap) {
+                crAcc = new Account(1L, 50, userId, false);
+                accMap.put(crAcc.getUserId(), crAcc);
             }
         }
         return crAcc;
@@ -32,14 +29,11 @@ public class Bank {
         Account dstContact = accMap.get(dstAccId);
         if (srcContact != null &&
                 dstContact != null) {
-            if (srcContact.getAmount() - amount >= 0 &&
-                    srcContact.getAmount() - amount >= 0) {
+            if (srcContact.getAmount() - amount >= 0) {
                 synchronized (srcContact) {
-                    if (srcContact.getAmount() - amount >= 0 &&
-                            srcContact.getAmount() - amount >= 0) {
-
-                        srcContact.setAmount(srcContact.getAmount() - amount);
-                        synchronized (dstContact) {
+                    synchronized (dstContact) {
+                        if (srcContact.getAmount() - amount >= 0) {
+                            srcContact.setAmount(srcContact.getAmount() - amount);
                             dstContact.setAmount(dstContact.getAmount() + amount);
                         }
                     }
