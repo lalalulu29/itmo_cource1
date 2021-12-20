@@ -2,24 +2,34 @@ package com.ifmo.bank;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+
+
+        for (int i = 0; i < 10000; i++) {
+            workWithBank();
+            System.out.println(i);
+        }
+
+    }
+
+    private static void workWithBank() throws InterruptedException {
         Bank bank = new Bank();
 
         Thread t1 = new Thread() {
             @Override
             public void run() {
-                bank.createAccount(1);
+                bank.createAccount();
             }
         };
         Thread t2 = new Thread() {
             @Override
             public void run() {
-                bank.createAccount(2);
+                bank.createAccount();
             }
         };
         Thread t3 = new Thread() {
             @Override
             public void run() {
-                bank.createAccount(3);
+                bank.createAccount();
             }
         };
 
@@ -36,31 +46,31 @@ public class Main {
         Thread t4 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(1, 2, 30);
+                bank.transferMoney(1, 2, 10);
             }
         };
         Thread t5 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(2, 1, 40);
+                bank.transferMoney(2, 1, 10);
             }
         };
         Thread t6 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(1, 2, 25);
+                bank.transferMoney(1, 2, 10);
             }
         };
         Thread t7 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(1, 2, 5);
+                bank.transferMoney(3, 1, 30);
             }
         };
         Thread t8 = new Thread() {
             @Override
             public void run() {
-                bank.transferMoney(2, 3, 30);
+                bank.transferMoney(2, 3, 20);
             }
         };
 
@@ -79,18 +89,14 @@ public class Main {
         t4.join();
         t5.join();
         t6.join();
-        t7.join();
         t8.join();
+        t7.join();
+
 
         System.out.println("After");
         for (Account value : bank.getAccMap().values()) {
             System.out.println(value.getUserId() + " : " +value.getAmount());
         }
-
-
-
-
-
     }
 
 }
